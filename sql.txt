@@ -1,0 +1,24 @@
+CREATE TABLE users ( 
+    `id` INT(11) NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(30) NOT NULL ,
+    `surname` VARCHAR(30) NOT NULL ,
+    `gender` VARCHAR(30) NOT NULL ,
+    `email` VARCHAR(100) NOT NULL ,
+    `password` VARCHAR(32) NOT NULL ,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    `updated_at` TIMESTAMP on update CURRENT_TIMESTAMP NULL DEFAULT NULL ,
+    PRIMARY KEY (`id`)
+)
+
+
+
+SELECT users.id , users.name , articles.id AS article , tags.tag FROM articles
+INNER JOIN users ON users.id = articles.user_id AND articles.id = 4
+INNER JOIN tag_article
+INNER JOIN tags ON tags.id =tag_article.tag_id  AND tag_article.article_id = articles.id
+
+
+
+
+SELECT articles.* FROM articles
+INNER JOIN tag_article ON tag_article.tag_id = 2 AND articles.id = tag_article.article_id

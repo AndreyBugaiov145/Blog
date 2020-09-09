@@ -1,0 +1,268 @@
+@media screen and (min-width: 1601px){
+    header div.container{
+        width: 1170px ;
+    }
+    div.section main.grid{
+        width: 1170px ;
+    }
+    div.section>div.container{
+        width: 1170px;
+    }
+    footer div.footer-info div.container{
+        width: 1170px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    div.section main.grid {
+        width: 90%; } }
+@media screen and (max-width: 900px) {
+    span, h3, li, a {
+        line-height: 170% !important;
+        font-size: 1.3em !important; }
+
+    span::before, span::after {
+        font-size: 1.1em;
+        line-height: 170%; }
+
+    header div.poster .right-arrow::before {
+        font-size: 0.8em;
+        line-height: 170%; }
+
+    header .search-field {
+        width: 500px; }
+    header .search-field input {
+        height: 60px;
+        font-size: 1.3em; }
+    header .search-field div.search-btn {
+        width: 50px;
+        height: 50px; }
+    header .search-field div.search-btn span::before {
+        font-size: 1.4em !important; }
+
+    div.section main.grid {
+        width: 98%; }
+    div.section main.grid .data-publication {
+        width: 70px;
+        height: 70px; }
+    div.section main.grid .data-publication span {
+        line-height: 130% !important; }
+
+    div.section div.pagination span {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em !important; }
+    div.section div.pagination span::before, div.section div.pagination span::after {
+        font-size: 1.5em; }
+
+    div.info-list {
+        flex-basis: 40%;
+        margin-top: 15px; }
+
+    div.poster span.blog {
+        font-size: 3.3em !important; }
+    div.poster span {
+        font-size: 2.2em !important; }
+    div.poster span.way-to-section {
+        font-size: 1.5em !important; }
+
+    div.box-to-subscribe div.logotip {
+        display: none; }
+    div.box-to-subscribe div.subscribe {
+        width: 100%;
+        position: relative;
+        top: 0;
+        bottom: 0; }
+    div.box-to-subscribe div.subscribe div.search-field > div {
+        width: 70%; }
+    div.box-to-subscribe div.subscribe div.search-field input {
+        height: 50px;
+        font-size: 1.2em; }
+    div.box-to-subscribe div.subscribe div.search-field .btn {
+        width: 25%; }
+    div.box-to-subscribe div.subscribe span::before {
+        font-size: 0.8em !important;
+        right: 90px !important; }
+    div.box-to-subscribe div.subscribe span::after {
+        right: 75px !important;
+        font-size: 0.8em !important; }
+
+    a.address::before {
+        font-size: 1.3em !important; }
+
+    div.social-networks span {
+        width: 60px !important;
+        height: 60px !important; }
+    div.social-networks span::before, div.social-networks span::after {
+        font-size: 1.4em !important; }
+    div.social-networks img {
+        width: 60px !important;
+        height: 40px !important;
+        border-radius: 9px !important; }
+
+    .brands-bar .logotip-head span::before {
+        right: 122px !important; }
+    .brands-bar .logotip-head span::after {
+        right: 102px !important; }
+
+    ul {
+        display: block; } }
+@media screen and (max-width: 660px) {
+    div.section main.grid {
+        width: 98% !important;
+        grid-template-columns: 1fr 1fr; }
+
+    span, h3, li, a {
+        line-height: 170% !important;
+        font-size: 1.7em !important; }
+
+    header .inform {
+        height: 100%; }
+    header .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+    header .container span {
+        font-size: 2em !important; }
+    header div.logo .container > div img {
+        width: 200px;
+        height: auto; }
+    header .search-field {
+        position: relative;
+        width: 60%; }
+    header .search-field input {
+        height: 70px;
+        font-size: 2em; }
+    header div.search-btn {
+        width: 35px;
+        height: 35px; }
+    header div.search-btn span {
+        font-size: 1.5em !important; }
+    header nav {
+        display: none; }
+    header div.poster {
+        height: 100%; }
+    header div.poster .blog {
+        font-size: 5em !important; }
+    header div.poster .blog-latest-news {
+        font-size: 3em !important; }
+
+    div.section main.grid div.data-publication {
+        width: 90px;
+        height: 90px; }
+    div.section div.content-article {
+        float: left;
+        width: 100%;
+        padding: 22px 15px; }
+    div.section div.content-article .description {
+        margin-bottom: 40px; }
+    div.section div.info-to-publication span.category-coments::before {
+        font-size: 1.2em !important; }
+    div.section span.category-coments-likes::before {
+        font-size: 1.2em !important; }
+    div.section div.pagination {
+        height: 50px; }
+    div.section div.pagination span {
+        width: 50px;
+        height: 100%;
+        font-size: 1.8em !important; }
+
+    div.brands-bar {
+        display: none; }
+
+    div.box-to-subscribe {
+        position: relative;
+        bottom: 0px;
+        border-top: 1px solid silver;
+        border-bottom: 1px solid silver;
+        height: 100%; }
+    div.box-to-subscribe div.subscribe {
+        height: 100%; }
+    div.box-to-subscribe div.subscribe div.head span {
+        font-size: 2.8em !important; }
+    div.box-to-subscribe div.subscribe div.logotip-head {
+        display: none; }
+    div.box-to-subscribe div.subscribe div.search-field {
+        padding-bottom: 10px; }
+    div.box-to-subscribe div.subscribe div.search-field input {
+        font-size: 2em;
+        height: 70px; }
+
+    footer div.footer-info {
+        padding: 20px 10px; }
+    footer div.footer-info div.info-list {
+        flex-basis: 100%; }
+    footer div.footer-info div.info-list span {
+        font-size: 3em !important; }
+    footer div.footer-info div.info-list span:after {
+        width: 100%;
+        height: 3px; }
+    footer div.footer-info div.info-list ul {
+        display: none; }
+    footer div.footer-info div.info-list li {
+        max-width: 100%;
+        font-size: 1.3em !important; }
+    footer div.footer-info div.info-list .ul a:before {
+        width: 12px;
+        height: 12px; }
+    footer div.footer-info div.info-list .ul a:hover::before {
+        background-color: #e77504; }
+    footer div.footer-info div#swipe-up {
+        width: 90px;
+        height: 90px;
+        bottom: -45px; }
+    footer div.footer-info div#swipe-up:before {
+        font-size: 2em; }
+    footer div.social-networks div.social span {
+        font-size: 1.2em !important; }
+    footer div.social-networks div.copyright span > span {
+        font-size: 1em !important; } }
+@media screen and (max-width: 440px) {
+    div.section main.grid {
+        width: 94% !important;
+        grid-template-columns: 1fr; }
+
+    span, h3, li, a {
+        line-height: 170% !important;
+        font-size: 1.7em !important; }
+
+    header div.logo .container > div {
+        margin-bottom: 40px; }
+    header div.logo .container > div img {
+        width: 300px;
+        height: auto; }
+    header .search-field {
+        position: relative;
+        width: 90%; }
+    header .search-field input {
+        height: 90px;
+        font-size: 2.4em; }
+    header div.search-btn {
+        width: 80px !important;
+        height: 80px !important; }
+    header div.search-btn span {
+        font-size: 2em !important; }
+    header div.poster {
+        height: 100%; }
+    header div.poster .blog {
+        font-size: 8em !important; }
+    header div.poster .blog-latest-news {
+        font-size: 5em !important; }
+
+    div.box-to-subscribe div.subscribe {
+        height: 100%; }
+    div.box-to-subscribe div.subscribe div.head span {
+        font-size: 2.8em !important; }
+    div.box-to-subscribe div.subscribe div.search-field {
+        width: 100%; }
+    div.box-to-subscribe div.subscribe div.search-field > div {
+        width: 100%; }
+    div.box-to-subscribe div.subscribe div.search-field input {
+        font-size: 1.8em;
+        height: 90px; }
+
+    div.copyright span {
+        font-size: 1.8em !important; }
+    div.copyright span > span {
+        font-size: 1em !important; } }
+
+/*# sourceMappingURL=main.css.map */
