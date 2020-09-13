@@ -58,7 +58,6 @@ class Route
                 } else {
                     self::ErrorPage404();
                 }
-
                 //create the controller class
                 $controller = new $controllerName();
                 if (method_exists($controller, $actionName)) {

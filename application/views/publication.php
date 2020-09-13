@@ -8,19 +8,25 @@
                     <span class="month"><?= date("M", strtotime($publicationData['created_at'])) ?></span>
                 </div>
             </div>
+
             <div class="content-article">
                 <div class="description flex">
                     <h3><?= $publicationData['header'] ?></h3>
-                    <span class="master"><?=$publicationData['user_name']?></span>
+                    <span class="master"><?=$publicationData['user_name']?>
+                        <? if(isset($_SESSION["id"]) && $_SESSION["id"] ===$publicationData['user_id'] ): ?>
+                           <a href="/catalog/delete/<?=$publicationData['id']?>" id="deletePublication" style="margin:0 20px">удалить</a>
+                           <a href="/catalog/updatePublication/<?=$publicationData['id']?>" style="margin:0 20px">редактировать</a>
+                       <? endif ;?>
+                    </span>
                     <span><?= $publicationData['description'] ?></span>
                 </div>
                 <div class="social-tags-bar flex flex-center">
                     <div class="social-bar flex flex-center">
                         <span class="send-icon"></span>
-                        <a href="#"><span class="facebook-icon icon"></span></a>
-                        <a href="#"><span class="twitter-icon icon"></span></a>
-                        <a href="#"><span class="google-icon icon"></span></a>
-                        <a href="#"><span class="pinterest-icon icon"></span></a>
+                        <a href="#" onclick="Share.facebook('<?=getUrl()?>','<?=$publicationData['header']?>','<?= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/users_img/' . $publicationData['img_src'] ?>','<?=$publicationData['short_description']?>')"><span class="facebook-icon icon"></span></a>
+                        <a href="#" onclick="Share.twitter('<?=getUrl()?>','<?=$publicationData['header']?>')" ><span class="twitter-icon icon"></span></a>
+                        <a href="#" ><span class="google-icon icon"></span></a>
+                        <a href="#" onclick="Share.pinterest('<?=getUrl()?>','<?= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/users_img/' . $publicationData['img_src'] ?>','<?= ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/users_img/' . $publicationData['img_src'] ?>'')" ><span class="pinterest-icon icon"></span></a>
                     </div>
                     <div class="tags-bar">
                         <span class="tag icon">Tag:</span>

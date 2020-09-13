@@ -11,14 +11,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../font/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../font/icomoon/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    <link rel="stylesheet" href="/font/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/font/icomoon/style.css">
+    <link rel="stylesheet" href="https:/stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../style/scss/main.css">
-    <link rel="stylesheet" href="../../style/scss/details.css ">
-    <link rel="stylesheet" href="../../style/scss/media-query.css">
-    <script src="../../js/jquery-3.4.0.js"></script>
+    <link rel="stylesheet" href="/style/scss/main.css">
+    <link rel="stylesheet" href="/style/scss/details.css ">
+    <link rel="stylesheet" href="/style/scss/media-query.css">
+  	<script src="/js/jquery-3.4.0.js"></script>
+    <style rel="stylesheet"> 
+    	.user-menu{
+    		display:none;
+    		position:absolute;
+    		top:30px;
+    		right:20px;
+    		flex-direction:column;
+    		background-color:#f6f6f6;
+    		padding:10px;
+    		border-radius:5px;
+    	}
+    	.user-menu a{
+    		border-bottom: 1px solid silver;
+    	}
+    	.user-menu a:hover{
+    		color:#ff7f00;
+    	}
+    	div.account{
+    		position:relative;
+    	}
+    	.active{
+    		background-color: #ff7f00;
+    		color:#fff !important;
+    	}
+    	a{
+    		padding: 3px;
+    		color:inherit;
+    		text-decoration: none !important;
+    	}
+    	a:hover{
+    		color:inherit;
+    	}
+    </style>
 </head>
 <body>
 <div class="page">
@@ -30,17 +63,44 @@
                         <span class="info-youremail-com icon">info@youremail.com</span>
                         <span class="border"></span>
                         <a class="my-phone icon" href="tel:+(56)123456546">+(56) 123 456 546</a>
+                        <? if(isset($_SESSION["successRegistrated"])): ?>
+			    		<span style="color:green;margin-left:15px">вы зарегистрированы</span>
+			   		 	<? endif ;?>
+			   		 	<? unset($_SESSION["successRegistrated"])?>  
+			   		 	<? if(isset($_SESSION["AuthDone"])): ?>
+			    		<span style="color:green;margin-left:15px">вы авторезированы</span>
+			   		 	<? endif ;?>
+			   		 	<? unset($_SESSION["AuthDone"])?> 
+			   		 	<? if(isset($_SESSION["successRegistrated"])): ?>
+			    		<span style="color:green;margin-left:15px">Пост удален</span>
+			   		 	<? endif ;?>
+			   		 	<? unset($_SESSION["successRegistrated"])?> 
+			   		 	<? if(isset($_SESSION["failValidate"])): ?>
+			    		<span style="color:red;margin-left:15px"><?=$_SESSION["failValidate"]?></span>
+			   		 	<? endif ;?>
+			   		 	<? unset($_SESSION["failValidate"])?> 
                     </div>
-                    <div class="flex flex-center">
+                    <div class="flex flex-center account">
                         <span class="border"></span>
-                        <span class="my-account" id="my-account">My Account  </span>
+                        <? if(!isset($_SESSION["id"])): ?>
+                        	<span class="my-account" id="account">My Account</span>
+                        <? else :?>
+                        		<span class="my-account" id="user-account" style="color:green">My Account</span>
+                        		
+                        		<div  class='user-menu'>
+                        		 <span ><?=$_SESSION["name"]?></span>
+                        		 <a href= "/catalog/user/<?=$_SESSION["id"]?>">Мои статьи</a>
+                        		 <a href= "/catalog/create">Добавит статью</a>
+                        		 <a href= "/logout">выйти</a>
+                        		</div>
+						<? endif ;?>
                     </div>
                 </div>
             </div>
             <div class="logo flex flex-center">
                 <div class="container flex flex-center flex-space-between">
                     <div>
-                        <a href="/" title="На главную"><img src="../../img/svg/Logo.svg" alt=""></a>
+                        <a href="/" title="На главную"><img src="/img/svg/Logo.svg" alt=""></a>
                     </div>
                     <div class="search-field">
                         <input type="text" placeholder="Inter Your Keyword. . .">
@@ -59,11 +119,11 @@
                         <span>FeatureD</span>
                     </div>
                     <div class="social flex">
-                        <a href="#"><span class="facebook-icon icon"></span></a>
-                        <a href="#"><span class="twitter-icon icon"></span></a>
-                        <a href="#"><span class="google-icon icon"></span></a>
-                        <a href="#"><span class="pinterest-icon icon"></span></a>
-                        <a href="#"><span class="skype-icon icon"></span></a>
+                        <a href="#" onclick="Share.facebook('<?=getUrl()?>')"><span class="facebook-icon icon"></span></a>
+                        <a href="#" onclick="Share.twitter('<?=getUrl()?>')" ><span class="twitter-icon icon"></span></a>
+                        <a href="#" ><span class="google-icon icon"></span></a>
+                        <a href="#" onclick="Share.pinterest('<?=getUrl()?>')" ><span class="pinterest-icon icon"></span></a>
+                        <a href="#" onclick="Share.skype('<?=getUrl()?>')"><span class="skype-icon icon"></span></a>
                     </div>
                 </div>
             </nav>
@@ -196,9 +256,9 @@
 <div id="authorization">
     <div class="box-auth">
         <span id="close">Close</span>
-        <form class="form-signin">
+        <form class="form-signin" action="/authorization" method="post" >
             <h1>Авторизация</h1>
-            <div class="form-group form ">
+            <div class="form-group form " action="/authorization" method="post"  >
                 <label for="email">Введите ваш email</label>
                 <input type="email" name="email" id="email" class="form-control">
             </div>
@@ -211,6 +271,6 @@
         </form>
     </div>
 </div>
-<script src="../../js/js.js"></script>
+<script src="/js/js.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ $bd = 'test';
 
 $host='localhost';
 $login='root';
-$password='flexi140';
+$password='root';
 $bd = 'blog';
 
 

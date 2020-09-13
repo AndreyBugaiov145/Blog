@@ -1,6 +1,6 @@
 <?php
 
-class controllerRegistration extends Controller
+class ControllerRegistration extends Controller
 {
 
     function __construct()
@@ -17,19 +17,43 @@ class controllerRegistration extends Controller
 
     function actionRegister()
     {
-        print_r($_POST);
-        $r = $this->model->regiserationUser($_POST);
-    var_dump($r);
-        //header("Location:/");
-        return true;
+        $respons = $this->model->setUser($_POST);
+        if(isset($_SESSION["failRegistration"])){
+        	header("location:/registration/index");
+        	return  true;
+        }
+         header("location: /");
+        return  true;
     }
 
     function actionCheckEmail()
     {
-        $r = $this->model->checkEmail($_POST);
-   var_dump($r);
+      $asUserRegistred = $this->model->checkEmail($_POST);
+        echo $asUserRegistred;
+        return true;
+    }
+    function actionAuthorization()
+    {
+        $user= $this->model->getUser($_POST);
+        if(isset($_SESSION["failValidate"])){
+        	header("location: /");
+            return true;
+        }
+        if(isset($_SESSION["id"])){
+            header("location: /");
+            return true;
+        }
 
-       // return 'sadasdasd';
+        header("location: /registration/index");
+       
+        return true;
+    }
+    function actionLogout()
+    {
+		unset($_SESSION["id"]);
+		unset($_SESSION["name"]);
+        header("location: /");
+        return true;
     }
 
 
